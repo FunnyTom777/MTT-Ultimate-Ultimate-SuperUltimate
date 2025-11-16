@@ -1,0 +1,16 @@
+# Keybinds:
+entervehicle: f
+exit vehicle: f
+openinventory: tab
+walkforward: w
+walkbackward: s
+walkleft: a
+walkright: d
+worldeditor: f11
+openradialmenu: e 
+toggleconsole: ~
+reloadlua: l
+freecamera: ctrl+f
+toggleparkingbreak: p
+toggleheadlights: h
+togglehighbeam: ctrl+h

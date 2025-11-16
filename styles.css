@@ -1,0 +1,113 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+h1 {
+  color: rgb(202, 30, 255);
+  font-family: "ProggyClean", monospace;
+}
+h2 {
+  color: rgb(202, 30, 255);
+  font-family: "ProggyClean", monospace;
+}
+@font-face {
+  font-family: "ProggyClean";
+  src: url("fonts/ProggyClean.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+p {
+  color: rgb(0, 0, 0);
+  font-family: "ProggyClean", monospace;
+}
+button {
+    background-color: rgb(202, 30, 255);
+    color: rgb(104, 255, 254);
+    font-family: "ProggyClean", monospace;
+}
+strong {
+    color: rgb(202, 30, 255);
+    font-family: "ProggyClean", monospace;
+}
+a {
+    color: rgb(202, 30, 255);
+    font-family: "ProggyClean", monospace;
+}
+option {
+  color: rgb(104, 255, 254);
+  font-family: "ProggyClean", monospace;
+}
+select {
+  color: rgb(104, 255, 254);
+  font-family: "ProggyClean", monospace;
+  background-color: rgb(202, 30, 255);
+}
+label {
+  color: rgb(0, 0, 0);
+  font-family: "ProggyClean", monospace;
+}
+#mainviewport {
+    margin: 0 auto;
+    width: 600px; /* slightly wider for better view */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    min-height: 500px;
+    position: relative;
+    top: 20px;
+}
+#LeftSidePanel, #rightsidepanel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #ffffff;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+#LeftSidePanel {
+    left: 0;
+}
+
+#rightsidepanel {
+    right: 0;
+}
+iframe {
+    display: block;
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+}
+#objectlist {
+    color: rgb(0, 0, 0);
+  font-family: "ProggyClean", monospace;
+}
+li {
+  color: rgb(0, 0, 0);
+  font-family: "ProggyClean", monospace;
+}
+#objectList li {
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+  padding: 4px 0;
+}
+#objectList button {
+  background: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+}
+#objectList button:hover {
+  color: #000;
+}
+footer {
+  object-position: bottom;
+  background-color: rgb(202, 30, 255);;
+}
+details {
+  color: rgb(0, 0, 0);
+  opacity: 0.6;
+  font-family: "ProggyClean", monospace;
+}
