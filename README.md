@@ -3,7 +3,7 @@
 
 
 **NEW MTT INSTALLATION:** 
-**PLEASE NOTE!: MTT atleast for the time being, is WINDOWS OS ONLY!**
+**PLEASE NOTE!: MTT atleast for the time being, is WINDOWS OS ONLY!** (unless somone crazy feels like porting to linux somehow :D)
 1. Download the mtt_installer.exe (see the mtt_installer.exe link below).
 2. Open File Exploerer and navigate to a good location (recomended locations are in yourpc > {your main drive, or another drive}) and at that location, create a new "Milk Toast Taco" Folder (The name can be whatever you want, but we recomend "Milk Toast Taco" for ease of finding it).
 3. When you have created that MTT folder, drag your newly downloaded "mtt_installer.exe" into that new mtt folder, and run the installer exe.
@@ -17,3 +17,65 @@
 3. when in the `updates` section, there should be a input feild and a few buttons, in the input feild labbeled `update link`, paste a MTT update github code, these codes can be found on the MTT website or in `updates.md` in this github repo.
 4. then, press `update` and it should start updating your MTT installation.
 > Note: it is recomended you backup your MTT data before updating, just incase the update breaks your data, though this is unlikely, its better to be safe than [sorry](https://en.wikipedia.org/wiki/Apology_(act))! :D
+
+## Milk Toast Taco Stuff
+
+Milk Toast Taco Main Menu options:
+
+- `Career Mode`
+  
+- `Multiplayer Mode`
+  
+- `Local Co-op Mode`
+  
+- `Options`
+  
+- `Mods`
+  
+- `Quit`
+  
+
+#### Career Mode Config File (`Careermodeconfig.yaml`)
+
+> The "Mode Config Files" Like this one for Career mode, or others for the other modes, are only to configure the default starting point of one of these modes, data that is edited by the game at any point will be in a save file!
+
+```yaml
+save_interval: 5 # every "5" minutes
+save_file: "saves/careermode/save1.yaml" # Best not to change this as it might break your save!!!
+dev_mode: False # Enables/disables Devmode, False by default
+mods_enabled: True # Toggles Mods
+Lua_Support_enabled: True # Toggles Lua (Lua For Mods, does not affect default game lua)
+default_username: "user1" # username to use if a username is not set
+use_mtt_manager_app: False # if True syncs settings with MTT manager App
+```
+
+> Career Mode Config File Still Needs Work!
+
+#### Multiplayer Mode Config File (`multiplayermodeconfig.yaml`)
+
+```yaml
+save_interval: 5 # every "5" minutes
+save_file: "saves/careermode/save1.yaml" # Best not to change this as it might break your save!!!
+dev_mode: False # Enables/disables Devmode, False by default
+mods_enabled: True # Toggles Mods
+Lua_Support_enabled: True # Toggles Lua (Lua For Mods, does not affect default game lua)
+use_mtt_manager_app: False # if True syncs settings with MTT manager App
+
+# Multiplayer Options:
+player_count_max: 30
+password: "none" # Leave as "none" for no password! NOTE, it must be EXACTLY "none" for it to work!
+allow_modded_vehicles: False
+allow_modded_charicters: False
+allow_fish_strangling: False # You Monster >:C
+allow_modded_items: False
+enable_flying_vehicles: True
+enable_vehicle_bombs_do_damage: False
+enable_vehicle_amunition_does_damage: False
+enable_character_permadeath: False
+force_same_version: True
+
+# Anti Cheat
+enable_anticheat: True
+kick_on_mod_detection: True          # If mods aren't allowed
+log_suspicious_actions: True
+```
