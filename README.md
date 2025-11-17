@@ -14,7 +14,7 @@
 **UPDATING MTT INSTALLATION:**
 1. Open the MTT manager (`mttmanager.exe` in your mtt instalation folder) app.
 2. inside the MTT manager app, navigate to the `options` section on the left sidebar, and then to the `updates` section.
-3. when in the `updates` section, there should be a input feild and a few buttons, in the input feild labbeled `update link`, paste a MTT update github code, these codes can be found on the MTT website or in `updates.md` in this github repo.
+3. when in the `updates` section, there should be a input feild and a few buttons, in the input feild labbeled `update link`, paste a MTT update github code, these codes can be found on the MTT website or in [stuff/updates.md](https://github.com/FunnyTom777/MTT-Ultimate-Ultimate-SuperUltimate/blob/1699ef189ba8755879d6f91b658ec9c5e0a9e18e/stuff/updates.md) in this github repo.
 4. then, press `update` and it should start updating your MTT installation.
 > Note: it is recomended you backup your MTT data before updating, just incase the update breaks your data, though this is unlikely, its better to be safe than [sorry](https://en.wikipedia.org/wiki/Apology_(act))! :D
 
