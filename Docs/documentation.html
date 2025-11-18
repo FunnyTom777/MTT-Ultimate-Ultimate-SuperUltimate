@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Toast Taco (MTT) Documentation Index</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for a "janky" simulator vibe */
+        :root {
+            --mtt-primary: #FF5733; /* Bright, aggressive orange */
+            --mtt-secondary: #33FFBD; /* Neon cyan */
+            --mtt-bg: #1f2937; /* Dark Slate */
+        }
+        body {
+            font-family: 'Monospace', 'Courier New', monospace;
+            background-color: var(--mtt-bg);
+            color: #E5E7EB;
+            min-height: 100vh;
+        }
+        .container-mtt {
+            max-width: 900px;
+        }
+        .doc-link {
+            transition: all 0.2s ease-in-out;
+            border-left: 4px solid var(--mtt-primary);
+        }
+        .doc-link:hover {
+            box-shadow: 0 0 15px var(--mtt-secondary);
+            transform: scale(1.02);
+            border-left: 8px solid var(--mtt-secondary);
+        }
+        .mtt-title-text {
+            color: var(--mtt-primary);
+            text-shadow: 0 0 5px var(--mtt-secondary);
+        }
+        /* Style for the URL hint to be smaller and scrollable */
+        .url-hint {
+            white-space: nowrap;
+            overflow-x: auto;
+            max-width: 100%;
+            display: block;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .url-hint::-webkit-scrollbar {
+            height: 2px;
+        }
+        /* Track */
+        .url-hint::-webkit-scrollbar-track {
+            background: #27303d;
+        }
+        /* Handle */
+        .url-hint::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 1px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="container-mtt mx-auto">
+
+        <!-- Header and Description -->
+        <header class="mb-10 text-center border-b-4 border-dashed border-gray-600 pb-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold mtt-title-text mb-2">
+                Milk Toast Taco Documentation
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400">
+                The dodgy, janky, slightly maniacal simulator of all simulators. don't take my word for it :D
+            </p>
+            <p class="mt-4 text-sm text-gray-500">
+                Warning: Links navigate away from this index page.
+            </p>
+        </header>
+
+        <!-- Document List Container -->
+        <main id="document-list" class="space-y-4">
+            <!-- Document links will be injected here by JavaScript -->
+            <div id="loading-message" class="text-center p-8 text-gray-400">
+                Loading Index... (If this persists, check the JS console for errors.)
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-sm text-gray-600 border-t-2 border-gray-700 pt-4">
+            <p>&copy; FunnyTom777 2025. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- CORE SCRIPTING AREA ---
+
+        // UPDATE THESE LINKS!
+        // Replace the example URLs below with the actual web links to your GitHub Markdown files.
+        const docFiles = [
+            { 
+                name: "01. Installing Milk Toast Taco", 
+                url: "https://github.com/FunnyTom777/MTT-Ultimate-Ultimate-SuperUltimate/Docs/install.md" 
+            },
+            { 
+                name: "02. Setting Up Milk Toast Taco", 
+                url: "https://github.com/FunnyTom777/MTT-Ultimate-Ultimate-SuperUltimate/Docs/setup.md" 
+            },
+            { 
+                name: "03. Configuring Milk Toast Taco", 
+                url: "https://github.com/FunnyTom777/MTT-Ultimate-Ultimate-SuperUltimate/Docs/configuring.md" 
+            },
+            // Add or remove your .md files here!
+            // { name: "New Feature Documentation", url: "https://github.com/YourUsername/YourRepoName/blob/main/docs/new_feature.md" },
+        ];
+
+        const listContainer = document.getElementById('document-list');
+
+        /**
+         * Generates the documentation index links using full URLs.
+         */
+        function generateIndex() {
+            // Clear loading message
+            listContainer.innerHTML = '';
+
+            if (docFiles.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="p-6 bg-yellow-900/50 border-l-4 border-yellow-400 text-yellow-100 rounded">
+                        No documentation files found in the list. Please update the 'docFiles' array in the script.
+                    </div>
+                `;
+                return;
+            }
+
+            docFiles.forEach(doc => {
+                // Check if the URL is provided
+                if (!doc.url) {
+                    console.error("Missing URL for document:", doc.name);
+                    return;
+                }
+
+                const linkElement = document.createElement('a');
+                linkElement.href = doc.url; // Use the full URL
+                linkElement.target = "_blank"; // Always open external links in a new tab
+                linkElement.className = 'doc-link block p-4 bg-gray-800/70 hover:bg-gray-700/90 rounded-lg shadow-xl hover:shadow-2xl';
+
+                // Title Section
+                const title = document.createElement('div');
+                title.className = 'text-xl font-bold text-white';
+                title.textContent = doc.name;
+
+                // URL Hint
+                const urlHint = document.createElement('div');
+                urlHint.className = 'text-sm text-gray-400 mt-1 url-hint'; // Added url-hint class for styling
+                urlHint.textContent = `URL: ${doc.url}`;
+
+                linkElement.appendChild(title);
+                linkElement.appendChild(urlHint);
+
+                listContainer.appendChild(linkElement);
+            });
+        }
+
+        // Run the function when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+             // Delay slightly to ensure visibility of the loading message before replacement
+             setTimeout(generateIndex, 50); 
+        });
+    </script>
+</body>
+</html>
